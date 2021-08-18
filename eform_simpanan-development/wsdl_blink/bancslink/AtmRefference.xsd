@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://service.bni.co.id/bancslink">
+	<xsd:complexType name="AtmRefference">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="isReversal"
+				type="xsd:boolean">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="reffId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="processingCode"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="transactionAmount"
+				type="xsd:integer">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="accountNum"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="cardNum"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="systemTraceAuditNum"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="retrievalReffNum"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="atmDate"
+				type="xsd:string">
+			</xsd:element>			<xsd:element minOccurs="0" name="atmTime"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="atmTerminal"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="atmMerchant"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="atmAddress"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="origTransDateTime"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="origSysTraceNum"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

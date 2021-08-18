@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.bni.co.id/core/bo">
+  <xsd:complexType name="UpdateBeneficiaryOwnerReq">
+    <xsd:all>
+      <xsd:element minOccurs="0" name="cifNum" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="namaNasabah" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tglLahir" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="jenisKelamin" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="statusPerkawinan" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="jmlTanggungan" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="domisili" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="pemberiDanaKerja" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tanggalMulaiKerja" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="alamatPemberiKerja1" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="hubunganPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="pekerjaanPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="jabatanPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="kodePekerjaan" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tempatLahir" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="kabKotaPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="hpNo1PemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="hpNo2PemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="kodePos" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="npwpPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tipeIdPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="idPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="perumPemberiDana" type="xsd:string"/>
+	  <!--<xsd:element minOccurs="0" name="employee4" type="xsd:string"/>-->
+	  <xsd:element minOccurs="0" name="rtPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="rwPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="provinsiPemberiDana" type="xsd:string"/>
+	  <!--<xsd:element minOccurs="0" name="employee5" type="xsd:string"/>-->
+      <xsd:element minOccurs="0" name="kecamatanPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="kelDesaPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="alamatLain" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="perumLain" type="xsd:string"/>
+      <!--<xsd:element minOccurs="0" name="employe8" type="xsd:string"/>-->
+	  <xsd:element minOccurs="0" name="rtLainPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="rwLainPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="provinsiLainPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="kabupatenLain" type="xsd:string"/>
+      <!--<xsd:element minOccurs="0" name="employe10" type="xsd:string"/>-->
+	  <xsd:element minOccurs="0" name="kecamatanLainPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="kelDesaLainPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="kodeposLain" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tempatLahirPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="tglLahirPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="jenisKelaminPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="statusKawinPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="wargaNegaraPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="alamatKerjaPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="komplekKerjaPemberiDana" type="xsd:string"/>
+      <!--<xsd:element minOccurs="0" name="employe13" type="xsd:string"/>-->
+	  <xsd:element minOccurs="0" name="rtKerjaPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="rwKerjaPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="provinsiKerjaPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="kabKerjaPemberiDana" type="xsd:string"/>
+	  <!--<xsd:element minOccurs="0" name="employe15" type="xsd:string"/>-->
+      <xsd:element minOccurs="0" name="kecamatanKerjaPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="kelDesaKerjaPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="kodeposKerjaPemberiDana" type="xsd:string"/>
+      <!--<xsd:element minOccurs="0" name="telpKantorPemberiDana" type="xsd:string"/>-->
+	  <xsd:element minOccurs="0" name="noTelp1KerjaPemberiDana" type="xsd:string"/>
+	  <xsd:element minOccurs="0" name="noTelp2KerjaPemberiDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="sumberDana" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="adaNPWP" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="pertahun" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="transaksiUsaha" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+</xsd:schema>

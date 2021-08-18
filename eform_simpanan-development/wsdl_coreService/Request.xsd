@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://service.bni.co.id/core"
+	targetNamespace="http://service.bni.co.id/core">
+	<xsd:include schemaLocation="CustomHeader.xsd" />
+	<xsd:complexType name="Request">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="systemId"
+				type="xsd:string">
+
+			</xsd:element>
+			<xsd:element minOccurs="0" name="systemJournal"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="customHeader"
+				type="bons0:CustomHeader">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="content"
+				type="xsd:anyType" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

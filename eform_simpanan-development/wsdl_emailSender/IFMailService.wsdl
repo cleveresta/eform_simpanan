@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.bni.co.id/mail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IFMailService" targetNamespace="http://service.bni.co.id/mail">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://service.bni.co.id/mail" xmlns:tns="http://service.bni.co.id/mail" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="EmailOut.xsd"/>
+      <xsd:element name="send">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="emailOut" nillable="true" type="tns:EmailOut"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="sendRequestMsg">
+    <wsdl:part element="tns:send" name="sendParameters"/>
+  </wsdl:message>
+    <wsdl:portType name="IFMailService">
+    <wsdl:operation name="send">
+      <wsdl:input message="tns:sendRequestMsg" name="sendRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

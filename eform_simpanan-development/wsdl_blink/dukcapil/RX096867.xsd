@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://service.bni.co.id/bancslink/dukcapil"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="RX096867">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ektp_status"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="dusun" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="nama" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="agama" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="ektp_created"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="jenis_pekerjaan"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="pddk_akh"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="tmpt_lahir"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="status_kawin"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="gol_darah"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_akta_kwn"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="jenis_kelamin"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_kk" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="nik" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="kab_name"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="nama_ayah"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="kec_name"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_rw" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="no_kel"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_rt" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="kodepos"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_kec"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="alamat"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_prop"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="nama_ibu"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="prop_name"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="no_kab"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="tgl_lahir"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="kel_name"
+				type="xsd:string">
+			</xsd:element>
+
+
+			<xsd:element minOccurs="0" name="foto" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

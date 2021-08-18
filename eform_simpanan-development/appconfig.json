@@ -1,0 +1,9 @@
+{
+    "smsSenderParameters": {
+        "provider" : "MITRACOMM",
+        "method" : "SENT",
+        "transactionType" : "PROD"
+    },
+    "photoThreshold" : 70.0
+    
+}

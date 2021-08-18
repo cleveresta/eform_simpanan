@@ -1,0 +1,10 @@
+{
+  "logger": {
+    "path": "/bnidocker/logs/eform_simpanan/main.log",
+    "level": "info",
+    "rotation": "500 MB",
+    "retention": "12 months",
+    "format": "<level>{level: <8}</level> <green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> - <cyan>{name}</cyan>:<cyan>{function}</cyan> - <level>{message}</level>"
+
+  }
+}

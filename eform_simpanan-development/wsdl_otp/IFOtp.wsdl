@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="IFOtp" targetNamespace="http://service.bni.co.id/otp" xmlns:tns="http://service.bni.co.id/otp" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://service.bni.co.id/otp">
+            <xsd:include schemaLocation="OtpIsValid.xsd"/>
+            <xsd:include schemaLocation="OtpValue.xsd"/>
+      <xsd:include schemaLocation="OtpResponse.xsd"/>
+      <xsd:include schemaLocation="OtpRequest.xsd"/>
+      <xsd:element name="request">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="otpRequest" nillable="true" type="tns:OtpRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="otpResponse" nillable="true" type="tns:OtpResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="otpValue" nillable="true" type="tns:OtpValue"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="otpIsValid" nillable="true" type="tns:OtpIsValid"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="use">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="otpValue" nillable="true" type="tns:OtpValue"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="requestRequestMsg">
+    <wsdl:part element="tns:request" name="requestParameters"/>
+  </wsdl:message>
+    <wsdl:message name="requestResponseMsg">
+    <wsdl:part element="tns:requestResponse" name="requestResult"/>
+  </wsdl:message>
+    <wsdl:message name="validateRequestMsg">
+    <wsdl:part element="tns:validate" name="validateParameters"/>
+  </wsdl:message>
+    <wsdl:message name="validateResponseMsg">
+    <wsdl:part element="tns:validateResponse" name="validateResult"/>
+  </wsdl:message>
+    <wsdl:message name="useRequestMsg">
+    <wsdl:part element="tns:use" name="useParameters"/>
+  </wsdl:message>
+    <wsdl:portType name="IFOtp">
+    <wsdl:operation name="request">
+      <wsdl:input message="tns:requestRequestMsg" name="requestRequest"/>
+      <wsdl:output message="tns:requestResponseMsg" name="requestResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="validate">
+      <wsdl:input message="tns:validateRequestMsg" name="validateRequest"/>
+      <wsdl:output message="tns:validateResponseMsg" name="validateResponse"/>
+    </wsdl:operation>
+        <wsdl:operation name="use">
+      <wsdl:input message="tns:useRequestMsg" name="useRequest"/>
+    </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

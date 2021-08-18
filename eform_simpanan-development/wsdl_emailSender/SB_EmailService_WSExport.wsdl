@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:Port_0="http://service.bni.co.id/mail" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://service.bni.co.id/mail/Binding" name="WSExport_IFMailServiceHttp_Service" targetNamespace="http://service.bni.co.id/mail/Binding">
+  <wsdl:import location="IFMailService.wsdl" namespace="http://service.bni.co.id/mail"/>
+  <wsdl:binding name="WSExport_IFMailServiceHttpBinding" type="Port_0:IFMailService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="send">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="sendRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSExport_IFMailServiceHttpService">
+    <wsdl:port binding="this:WSExport_IFMailServiceHttpBinding" name="WSExport_IFMailServiceHttpPort">
+      <soap:address location="http://localhost:9080/SB_EmailServiceWeb/sca/WSExport"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

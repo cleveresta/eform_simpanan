@@ -1,0 +1,75 @@
+<wsdl:definitions name="IFCoreService" targetNamespace="http://service.bni.co.id/core" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.bni.co.id/core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://service.bni.co.id/core">
+         <xsd:include schemaLocation="Request.xsd"/>
+         <xsd:include schemaLocation="SupFault.xsd"/>
+         <xsd:include schemaLocation="SysFault.xsd"/>
+         <xsd:include schemaLocation="AppFault.xsd"/>
+         <xsd:include schemaLocation="Response.xsd"/>
+         <xsd:include schemaLocation="CustomHeader.xsd"/>
+         <xsd:include schemaLocation="ResponseHeader.xsd"/>
+         <xsd:element name="transaction">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="request" nillable="true" type="tns:Request"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="transactionResponse">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="response" nillable="true" type="tns:Response"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="transaction_appFault" type="tns:AppFault"/>
+         <xsd:element name="transaction_sysFault" type="tns:SysFault"/>
+         <xsd:element name="SupFault_element" nillable="true" type="tns:SupFault"/>
+      </xsd:schema>
+      <xsd:schema targetNamespace="http://service.bni.co.id/core/bo">
+         <xsd:include schemaLocation="OKMessage.xsd"/>
+         <xsd:include schemaLocation="AccountShortInquiryReq.xsd"/>
+         <xsd:include schemaLocation="AccountShortInquiryRes.xsd"/>
+         <xsd:include schemaLocation="CifDetailsReq.xsd"/>
+         <xsd:include schemaLocation="CifDetailsRes.xsd"/>
+         <xsd:include schemaLocation="CreateCIFReq.xsd"/>
+         <xsd:include schemaLocation="CreateCIFRes.xsd"/>
+         <xsd:include schemaLocation="OpenAccountListReq.xsd"/>
+         <xsd:include schemaLocation="OpenAccountListRes.xsd"/>
+         <xsd:include schemaLocation="InitCreateILAAccountReq.xsd"/>
+         <xsd:include schemaLocation="InitCreateILAAccountRes.xsd"/>
+         <xsd:include schemaLocation="CreateTopUpAccountReq.xsd"/>
+         <xsd:include schemaLocation="InitCreateDEPAccountReq.xsd"/>
+         <xsd:include schemaLocation="InitCreateDEPAccountRes.xsd"/>
+         <xsd:include schemaLocation="CreateDepositAccountReq.xsd"/>
+		 <xsd:include schemaLocation="InquiryCustJobDetailReq.xsd"/>
+         <xsd:include schemaLocation="InquiryCustJobDetailRes.xsd"/>
+         <xsd:include schemaLocation="UpdateBeneficiaryOwnerReq.xsd"/>
+		 <xsd:include schemaLocation="UpdateCustJobDetailsReq.xsd"/>
+	      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="transactionRequestMsg">
+      <wsdl:part element="tns:transaction" name="transactionParameters"/>
+   </wsdl:message>
+   <wsdl:message name="transactionResponseMsg">
+      <wsdl:part element="tns:transactionResponse" name="transactionResult"/>
+   </wsdl:message>
+   <wsdl:message name="transaction_appFaultMsg">
+      <wsdl:part element="tns:transaction_appFault" name="appFault"/>
+   </wsdl:message>
+   <wsdl:message name="transaction_sysFaultMsg">
+      <wsdl:part element="tns:transaction_sysFault" name="sysFault"/>
+   </wsdl:message>
+   <wsdl:message name="transaction_supFaultMsg">
+      <wsdl:part element="tns:SupFault_element" name="supFault"/>
+   </wsdl:message>
+   <wsdl:portType name="IFCoreService">
+      <wsdl:operation name="transaction">
+         <wsdl:input message="tns:transactionRequestMsg" name="transactionRequest"/>
+         <wsdl:output message="tns:transactionResponseMsg" name="transactionResponse"/>
+         <wsdl:fault message="tns:transaction_appFaultMsg" name="appFault"/>
+         <wsdl:fault message="tns:transaction_supFaultMsg" name="supFault"/>
+         <wsdl:fault message="tns:transaction_sysFaultMsg" name="sysFault"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="BancslinkTransaction" targetNamespace="http://service.bni.co.id/bancslink"
+  xmlns:tns="http://service.bni.co.id/bancslink"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.bni.co.id/bancslink">
+      <xsd:include schemaLocation="bancslink/Response.xsd"/>
+      <xsd:include schemaLocation="bancslink/Request.xsd"/>
+      <xsd:include schemaLocation="bancslink/OKMessage.xsd"/>
+      <xsd:include schemaLocation="bancslink/ErrorMessage.xsd"/>
+      <xsd:include schemaLocation="bancslink/Receipt.xsd"/>
+      <xsd:element name="transaction">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="tns:Request"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="transactionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="tns:Response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="transactionFault1" nillable="true" type="xsd:string"/>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://service.bni.co.id/bancslink/dukcapil">
+      <xsd:include schemaLocation="dukcapil/RX096866.xsd"/>
+      <xsd:include schemaLocation="dukcapil/TX096866.xsd"/>
+      <xsd:include schemaLocation="dukcapil/RX096867.xsd"/>
+      <xsd:include schemaLocation="dukcapil/TX096867.xsd"/>
+      <xsd:include schemaLocation="dukcapil/RX096868.xsd"/>
+      <xsd:include schemaLocation="dukcapil/TX096868.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="transactionRequestMsg">
+    <wsdl:part element="tns:transaction" name="transactionParameters"/>
+  </wsdl:message>
+  <wsdl:message name="transactionResponseMsg">
+    <wsdl:part element="tns:transactionResponse" name="transactionResult"/>
+  </wsdl:message>
+  <wsdl:message name="transaction_transactionFault1Msg">
+    <wsdl:part element="tns:transactionFault1" name="transactionFault1"/>
+  </wsdl:message>
+  <wsdl:portType name="BancslinkTransaction">
+    <wsdl:operation name="transaction">
+      <wsdl:input message="tns:transactionRequestMsg" name="transactionRequest"/>
+      <wsdl:output message="tns:transactionResponseMsg" name="transactionResponse"/>
+      <wsdl:fault message="tns:transaction_transactionFault1Msg" name="transactionFault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

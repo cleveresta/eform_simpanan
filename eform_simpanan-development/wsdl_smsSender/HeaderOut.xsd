@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://service.bni.co.id/smssender">
+	<xsd:complexType name="HeaderOut">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="smsProviderId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="msisdn" type="xsd:string" />
+			<xsd:element minOccurs="0" name="transactionType"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="transactionId"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="transactionDate"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="reffTransactionId"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="reffTransactionDate"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="responseType"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="method"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

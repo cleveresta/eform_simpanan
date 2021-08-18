@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://service.bni.co.id/bancslink">
+	<xsd:complexType name="Header">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="systemId"
+				type="xsd:string" />
+			<xsd:element minOccurs="0" name="branch">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="4" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="terminal">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="3" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="teller">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="5" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="tranCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="6" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="journal">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="6" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			<xsd:element minOccurs="0" name="transactionDate"
+				type="xsd:date">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="overrideFlag"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="messageHandlerFlag">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="1" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>			<xsd:element minOccurs="0" name="supervisorId">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="5" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

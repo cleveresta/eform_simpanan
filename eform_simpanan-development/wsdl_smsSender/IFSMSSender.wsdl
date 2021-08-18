@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:bons1="http://service.bni.co.id/smsapp"
+  xmlns:tns="http://service.bni.co.id/smssender"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SMSSender" targetNamespace="http://service.bni.co.id/smssender">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.bni.co.id/smssender"
+      xmlns:bons1="http://service.bni.co.id/smsapp"
+      xmlns:tns="http://service.bni.co.id/smssender"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://service.bni.co.id/smsapp" schemaLocation="HeaderIn.xsd"/>
+      <xsd:include schemaLocation="HeaderOut.xsd"/>
+      <xsd:element name="sendMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="headerIn" nillable="true" type="bons1:HeaderIn"/>
+            <xsd:element name="headerOut" nillable="true" type="tns:HeaderOut"/>
+            <xsd:element name="message" nillable="true" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendMessageRequestMsg">
+    <wsdl:part element="tns:sendMessage" name="sendMessageParameters"/>
+  </wsdl:message>
+  <wsdl:portType name="IFSMSSender">
+    <wsdl:operation name="sendMessage">
+      <wsdl:input message="tns:sendMessageRequestMsg" name="sendMessageRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+version: "3.3"
+services:
+  web:
+    image: jtl-tkgiharbor.hq.bni.co.id/bni-nextsoa-dev/eform-simpanan_dev
+    build: .
+    ports:
+      - "9101:9090"
+    networks:
+      - web_net
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "192M"
+      replicas: 2
+    environment:
+      ENV_DB_USER: "soa_app"
+      ENV_DB_PASS: "soaapp123" #old soa_app, new soaapp123
+      ENV_DB_HOST: "soa.ora"
+      ENV_DB_PORT: "1686" #old 1572, new 1686
+      ENV_DB_SID: "soasysqa" #old soasysdev, new soasysqa
+      ENV_CORESERVICE_ENDPOINT: "http://soa.dp:57004/CoreService"
+      ENV_CHANNELSERVICE_ENDPOINT: "http://soa.dp:57007/ChannelService"
+      ENV_OTP_ENDPOINT: "http://soa.ps:9080/BP_OTPEngineWeb/sca/OTPExport"
+      ENV_SMSSENDER_ENDPOINT: "http://soa.ps:9080/SB_SMSBankingWeb/sca/SMSSender_WSExport"
+      ENV_FR_ENDPOINT: "http://soa.ext:8180/selfie/checkid"
+      ENV_RECEIPT_COMPOSER_ENDPOINT: "http://soa.ps:9084/SB_ReceiptComposer/services/ReceiptService"
+      ENV_EMAIL_SENDER_ENDPOINT: "http://soa.ps:9084/SB_EmailServiceWeb/sca/WSExport"
+    extra_hosts:
+      - "soa.dp:192.168.143.61"
+      - "soa.ps:192.168.143.27"
+      - "soa.ext:192.168.152.220"
+      - "soa.int:192.168.151.220"
+      - "soa.ora:192.168.143.93"
+      - "soa.ora.old:192.168.132.81"
+      - "gitlab.bni.co.id:192.168.150.100"
+networks:
+  web_net:
+    driver: overlay
+    attachable: true
+    #ipam:
+    #  config:
+    #    - subnet: 172.18.0.0/27

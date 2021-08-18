@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="API_VeriJelas" targetNamespace="http://service.bni.co.id/verijelas" xmlns:tns="http://service.bni.co.id/verijelas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import namespace="http://service.bni.co.id/verijelas" location="IFVeriJelas.wsdl"></wsdl:import>
+    <wsdl:binding name="API_VeriJelasBinding" type="tns:IFVeriJelas">
+    	<soap:binding style="document"
+    		transport="http://schemas.xmlsoap.org/soap/http" />
+    	<wsdl:operation name="checkSelfie">
+    		<soap:operation
+    			soapAction="http://service.bni.co.id/verijelas/checkSelfie" />
+    		<wsdl:input name="checkSelfieRequest">
+    			<soap:body use="literal" />
+    		</wsdl:input>
+    		<wsdl:output name="checkSelfieResponse">
+    			<soap:body use="literal" />
+    		</wsdl:output>
+    	</wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="API_VeriJelas">
+		<wsdl:port name="API_VeriJelasPort" binding="tns:API_VeriJelasBinding">
+			<soap:address location="http://soa.f5:8180/selfie/checkid" />
+		</wsdl:port>
+	</wsdl:service></wsdl:definitions>

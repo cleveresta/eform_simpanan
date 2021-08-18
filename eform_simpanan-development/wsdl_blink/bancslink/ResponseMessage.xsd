@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:bons0="http://service.bni.co.id/bancslink"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://service.bni.co.id/bancslink">
+	<xsd:include schemaLocation="Header.xsd" />
+	<xsd:complexType name="ResponseMessage">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Header"
+				type="bons0:Header" />			<xsd:element minOccurs="0" name="Body" type="xsd:anyType"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

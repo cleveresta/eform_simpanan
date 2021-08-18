@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://service.bni.co.id/verijelas" xmlns:bons0="http://service.bni.co.id/verijelas" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Data.xsd"/>
+    <xsd:include schemaLocation="Errors.xsd"/>
+    <xsd:complexType name="Response">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="timestamp" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="status" type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="errors" type="bons0:Errors">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="data" type="bons0:Data"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

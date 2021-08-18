@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:Port_0="http://service.bni.co.id/smssender" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://service.bni.co.id/smssender/Binding" name="SMSSender_WSExport_IFSMSSenderHttp_Service" targetNamespace="http://service.bni.co.id/smssender/Binding">
+  <wsdl:import location="IFSMSSender.wsdl" namespace="http://service.bni.co.id/smssender"/>
+  <wsdl:binding name="SMSSender_WSExport_IFSMSSenderHttpBinding" type="Port_0:IFSMSSender">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="sendMessageRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SMSSender_WSExport_IFSMSSenderHttpService">
+    <wsdl:port binding="this:SMSSender_WSExport_IFSMSSenderHttpBinding" name="SMSSender_WSExport_IFSMSSenderHttpPort">
+      <soap:address location="http://localhost:9080/SB_SMSBankingWeb/sca/SMSSender_WSExport"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

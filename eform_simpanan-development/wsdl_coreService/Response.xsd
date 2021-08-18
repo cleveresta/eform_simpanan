@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://service.bni.co.id/core"
+	targetNamespace="http://service.bni.co.id/core">
+	<xsd:include schemaLocation="ResponseHeader.xsd" />
+	<xsd:complexType name="Response">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="header"
+				type="bons0:ResponseHeader" />
+			<xsd:element minOccurs="0" name="content"
+				type="xsd:anyType" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

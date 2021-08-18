@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="IFVeriJelas" targetNamespace="http://service.bni.co.id/verijelas" xmlns:tns="http://service.bni.co.id/verijelas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://service.bni.co.id/verijelas">
+            <xsd:include schemaLocation="verijelas/Response.xsd"/>
+      <xsd:include schemaLocation="verijelas/Request.xsd"/>
+      <xsd:element name="checkSelfie">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="tns:Request"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkSelfieResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="tns:Response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="checkSelfieRequestMsg">
+    <wsdl:part element="tns:checkSelfie" name="checkSelfieParameters"/>
+  </wsdl:message>
+    <wsdl:message name="checkSelfieResponseMsg">
+    <wsdl:part element="tns:checkSelfieResponse" name="checkSelfieResult"/>
+  </wsdl:message>
+    <wsdl:portType name="IFVeriJelas">
+    <wsdl:operation name="checkSelfie">
+      <wsdl:input message="tns:checkSelfieRequestMsg" name="checkSelfieRequest"/>
+      <wsdl:output message="tns:checkSelfieResponseMsg" name="checkSelfieResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

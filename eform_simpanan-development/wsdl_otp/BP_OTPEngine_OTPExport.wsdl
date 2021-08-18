@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="OTPExport_IFOtpHttp_Service" targetNamespace="http://service.bni.co.id/otp" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://service.bni.co.id/otp" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="IFOtp.wsdl" namespace="http://service.bni.co.id/otp"/>
+  <wsdl:binding name="OTPExport_IFOtpHttpBinding" type="this:IFOtp">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="request">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="requestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validate">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="validateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="use">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="useRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OTPExport_IFOtpHttpService">
+    <wsdl:port binding="this:OTPExport_IFOtpHttpBinding" name="OTPExport_IFOtpHttpPort">
+      <soap:address location="http://localhost:9080/BP_OTPEngineWeb/sca/OTPExport"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

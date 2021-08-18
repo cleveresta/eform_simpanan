@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://service.bni.co.id/bancslink/dukcapil"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="TX096868">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="transactionId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="transactionSource"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="customer_id"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="nik" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="image" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="channel"
+				type="xsd:string">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

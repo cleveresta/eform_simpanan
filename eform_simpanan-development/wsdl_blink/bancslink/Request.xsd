@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://service.bni.co.id/bancslink"
+	targetNamespace="http://service.bni.co.id/bancslink">
+	<xsd:include schemaLocation="AtmRefference.xsd"></xsd:include>
+	<xsd:include schemaLocation="Header.xsd" />
+	<xsd:complexType name="Request" mixed="false">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Header"
+				type="bons0:Header" />
+
+			<xsd:element minOccurs="0" name="AtmRefference"
+				type="bons0:AtmRefference">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Body" type="xsd:anyType"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

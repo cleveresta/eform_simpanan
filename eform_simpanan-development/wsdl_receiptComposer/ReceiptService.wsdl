@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.bni.co.id/receipt" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.bni.co.id/receipt" xmlns:intf="http://service.bni.co.id/receipt" xmlns:tns2="http://service.bni.co.id/receipt/obj" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.bni.co.id/receipt" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://service.bni.co.id/receipt/obj"/>
+   <element name="compose">
+    <complexType>
+     <sequence>
+      <element name="request" type="tns2:ReceiptRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="composeResponse">
+    <complexType>
+     <sequence>
+      <element name="composeReturn" type="tns2:ReceiptResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fault" type="tns2:ReceiptFault"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.bni.co.id/receipt/obj" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="ReceiptRequest">
+    <sequence>
+     <element name="channelId" nillable="true" type="xsd:string"/>
+     <element name="jsonStringParams" nillable="true" type="xsd:string"/>
+     <element name="providerId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ReceiptResponse">
+    <sequence>
+     <element name="channelId" nillable="true" type="xsd:string"/>
+     <element name="receipt" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ReceiptFault">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="composeResponse">
+
+      <wsdl:part element="impl:composeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ReceiptFault">
+
+      <wsdl:part element="impl:fault" name="fault">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="composeRequest">
+
+      <wsdl:part element="impl:compose" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ReceiptService">
+
+      <wsdl:operation name="compose">
+
+         <wsdl:input message="impl:composeRequest" name="composeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:composeResponse" name="composeResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:ReceiptFault" name="ReceiptFault">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ReceiptServiceSoapBinding" type="impl:ReceiptService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="compose">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="composeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="composeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="ReceiptFault">
+
+            <wsdlsoap:fault name="ReceiptFault" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ReceiptServiceService">
+
+      <wsdl:port binding="impl:ReceiptServiceSoapBinding" name="ReceiptService">
+
+         <wsdlsoap:address location="http://localhost:8080/SB_ReceiptComposer/services/ReceiptService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
