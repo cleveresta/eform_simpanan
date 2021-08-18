@@ -1,10 +1,10 @@
 version: "3.3"
 services:
   web:
-    image: jtl-tkgiharbor.hq.bni.co.id/bni-nextsoa-dev/eform-simpanan_dev
+    image: test_eform_simpanan
     build: .
     ports:
-      - "9101:9090"
+      - "9105:9090"
     networks:
       - web_net
     volumes:
